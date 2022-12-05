@@ -138,12 +138,12 @@ public class IntegerListImpl implements IntegerList {
     }
     public void binarySearch() {
         List<Integer> list3=new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             list3.add(i,rnd.nextInt(0,100));
         }
-        //Collections.sort(list);
+        Collections.sort(list3);
         long start1 = System.currentTimeMillis();
-         int index=Collections.binarySearch(list3, 6);
+         int index=Collections.binarySearch(list3, 5);
         System.out.println("время поиска "+(System.currentTimeMillis() - start1));
         System.out.println(" индекс элемента="+index);
         System.out.println(list3.toString());
