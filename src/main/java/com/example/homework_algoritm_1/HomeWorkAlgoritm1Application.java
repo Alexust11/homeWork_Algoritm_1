@@ -59,8 +59,14 @@ public class HomeWorkAlgoritm1Application {
         System.out.println("_____задача 11:_________");
         System.out.println(integerList.toArray());
 
-//        System.out.println("_____задача 11:_________");
-//        System.out.println(list.isEmpty());
+        System.out.println("_____задача 12:_________");
+
+        integerList.sort3Metods();
+        System.out.println("_____задача 13:_________");
+
+        integerList.binarySearch();
+
+
 //        System.out.println("_______________________________________");
 //        System.out.println(list.toString()); ;
     }

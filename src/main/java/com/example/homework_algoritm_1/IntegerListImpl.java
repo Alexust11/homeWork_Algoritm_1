@@ -1,14 +1,12 @@
 package com.example.homework_algoritm_1;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class IntegerListImpl implements IntegerList {
 
     private  List<Integer> integerList = new ArrayList<>();
-
+    private Random rnd = new Random();
 
     @Override
     public Integer add(Integer item) {
@@ -119,4 +117,37 @@ public class IntegerListImpl implements IntegerList {
     public void getAll() {
         integerList.stream().forEach(System.out::println);
     }
+
+    public void sort3Metods() {
+        List<Integer> list=new ArrayList<>();
+        for (int i = 0; i < 100000; i++) {
+            list.add(i,rnd.nextInt(0,100));
+        }
+        List<Integer> list1=new ArrayList<>();
+        list1.addAll(list);
+        List<Integer> list2=new ArrayList<>();
+        list2.addAll(list);
+        List<Integer> list3=new ArrayList<>();
+        list3.addAll(list);
+        long start = System.currentTimeMillis();
+        Collections.sort(list1);
+        System.out.println(System.currentTimeMillis() - start);
+        long start1 = System.currentTimeMillis();
+        Collections.reverse(list2);
+        System.out.println(System.currentTimeMillis() - start1);
+    }
+    public void binarySearch() {
+        List<Integer> list3=new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list3.add(i,rnd.nextInt(0,100));
+        }
+        //Collections.sort(list);
+        long start1 = System.currentTimeMillis();
+         int index=Collections.binarySearch(list3, 6);
+        System.out.println("время поиска "+(System.currentTimeMillis() - start1));
+        System.out.println(" индекс элемента="+index);
+        System.out.println(list3.toString());
+    }
+
+
 }
