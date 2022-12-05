@@ -12,7 +12,7 @@ public class HomeWorkAlgoritm1Application {
     public static void main(String[] args) {
         SpringApplication.run(HomeWorkAlgoritm1Application.class, args);
         IntegerListImpl integerList=new IntegerListImpl();
-        List<Integer> expectedList=new ArrayList<>();
+        List<Integer> expectedList=new ArrayList<>(List.of(5, 4, 7, 9, 1, 3));
         // 1
         System.out.println("_____задача 1:_________");
         System.out.println("Добавленный элемент -"+ integerList.add(1));
@@ -33,34 +33,32 @@ public class HomeWorkAlgoritm1Application {
         integerList.getAll();
 
         System.out.println("_____задача 4:_________");
-        System.out.println(integerList.remove(8));
+        System.out.println(integerList.remove(3));
         integerList.getAll();
-//
-//        System.out.println("_____задача 5:_________");
-//        System.out.println(list.remove(4));
-//        list.getAll();
-//
-//        System.out.println("_____задача 6:_________");
-//        System.out.println(list.contains("Привет2"));
-//
-//        System.out.println("_____задача 7:_________");
-//        System.out.println(list.indexOf("Привет2") );
-//
-//        System.out.println("_____задача 8:_________");
-//        System.out.println(list.lastIndexOf("новый элемент"));
-//
-//        System.out.println("_____задача 9:_________");
-//        System.out.println(list.get(3));
-//
-//        System.out.println("_____задача 10:_________");
-//        expectedList.add(0,"Привет");
-//        expectedList.add(1,"Привет1");
-//        expectedList.add(2,"Привет2");
-//        // expectedList.add(3,"новый элемент");
-//        expectedList.stream().forEach(System.out::println);
-//
-//        System.out.println(list.equals(expectedList));
-//
+
+        System.out.println("_____задача 5:_________");
+        System.out.println(integerList.remove(4));
+        integerList.getAll();
+
+        System.out.println("_____задача 6:_________");
+        System.out.println(integerList.contains(4));
+
+        System.out.println("_____задача 7:_________");
+        System.out.println(integerList.indexOf(4) );
+
+        System.out.println("_____задача 8:_________");
+        System.out.println(integerList.lastIndexOf(4));
+
+        System.out.println("_____задача 9:_________");
+        System.out.println(integerList.get(3));
+
+        System.out.println("_____задача 10:_________");
+        List<Integer> firstList = new ArrayList<>(List.of(5, 4, 7, 9, 1, 3));
+        System.out.println(integerList.equals(expectedList));
+
+        System.out.println("_____задача 11:_________");
+        System.out.println(integerList.toArray());
+
 //        System.out.println("_____задача 11:_________");
 //        System.out.println(list.isEmpty());
 //        System.out.println("_______________________________________");

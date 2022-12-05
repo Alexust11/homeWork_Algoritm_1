@@ -1,5 +1,7 @@
 package com.example.homework_algoritm_1;
 
+import java.util.List;
+
 public interface IntegerList {
     // Добавление элемента.
     // Вернуть добавленный элемент
@@ -59,7 +61,7 @@ public interface IntegerList {
     // Сравнить текущий список с другим.
     // Вернуть true/false или исключение,
     // если передан null.
-    boolean equals(IntegerList otherList);
+    boolean equals( List<Integer> secondList);
 
     // Вернуть фактическое количество элементов.
     int size();

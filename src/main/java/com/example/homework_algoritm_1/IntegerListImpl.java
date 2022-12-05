@@ -1,11 +1,13 @@
 package com.example.homework_algoritm_1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class IntegerListImpl implements IntegerList {
 
-    private final List<Integer> integerList = new ArrayList<>();
+    private  List<Integer> integerList = new ArrayList<>();
 
 
     @Override
@@ -43,33 +45,50 @@ public class IntegerListImpl implements IntegerList {
 
     @Override
     public Integer remove(int index) {
-        return null;
+        Integer tmp = integerList.get(index);
+        integerList.remove(index);
+        return tmp;
     }
 
     @Override
     public boolean contains(Integer item) {
+        if (integerList.contains(item)) {
+            return true;
+        }
         return false;
     }
 
     @Override
     public int indexOf(Integer item) {
-        return 0;
+        return integerList.indexOf(item);
     }
 
     @Override
     public int lastIndexOf(Integer item) {
-        return 0;
+       return integerList.lastIndexOf(item);
     }
 
     @Override
     public Integer get(int index) {
-        return null;
+        if (index > integerList.size()) {
+            throw new MyException("Индекс превышает размер массива");
+        }
+        return integerList.get(index);
     }
 
     @Override
-    public boolean equals(IntegerList otherList) {
-        return false;
-    }
+    public boolean equals(List<Integer> otherList) {
+        if (integerList == null) {
+            return otherList == null;
+        }
+
+        if (integerList.size() != otherList.size()) {
+            return false;
+        }
+        integerList= integerList.stream().sorted().collect(Collectors.toList());
+        otherList = otherList.stream().sorted().collect(Collectors.toList());
+        return integerList.equals(otherList);
+      }
 
     @Override
     public int size() {
@@ -78,7 +97,9 @@ public class IntegerListImpl implements IntegerList {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        if (integerList.isEmpty()) {
+            return true;
+        } else return false;
     }
 
     @Override
@@ -88,7 +109,11 @@ public class IntegerListImpl implements IntegerList {
 
     @Override
     public Integer[] toArray() {
-        return new Integer[0];
+        Integer[] copyArrey = new Integer[integerList.size()];
+        for (int i = 0; i < copyArrey.length; i++) {
+            copyArrey[i]=integerList.get(i);
+        }
+       return copyArrey;
     }
 
     public void getAll() {
